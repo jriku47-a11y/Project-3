@@ -194,6 +194,12 @@ npm install     # once — installs jsdom (a dev dependency)
 npm test        # starts a local server and runs the suite
 ```
 
+To run the very same suite against a deployed copy:
+
+```bash
+SITE_URL=https://jriku47-a11y.github.io/Project-3/ npm test
+```
+
 The suite drives the real page in a headless DOM and asserts behaviour a reviewer
 would check by hand:
 
@@ -211,7 +217,8 @@ would check by hand:
 | Privacy + secrets | no address, no phone, no other email address, no credentials |
 | Responsive CSS | breakpoints present, grids able to shrink, reduced motion |
 
-Latest result: **185 checks passing, 0 failing.**
+Latest result: **185 checks passing, 0 failing** — locally and against the live
+deployment at <https://jriku47-a11y.github.io/Project-3/>.
 
 Layout was additionally verified in real Chrome: no horizontal overflow at
 320 / 360 / 390 / 414 / 480 / 600 / 768 / 834 / 1024 / 1180 / 1366 / 1600 / 1920 px,

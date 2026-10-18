@@ -21,6 +21,9 @@ const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 const PORT = Number(process.env.TEST_PORT || 8131);
+/* Set SITE_URL to run the same suite against a deployed copy, for example:
+     SITE_URL=https://user.github.io/Project-3/ npm test                */
+const SITE_URL = process.env.SITE_URL || ("http://127.0.0.1:" + PORT + "/");
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -613,9 +616,11 @@ function readFile(rel) {
    RUN
    ============================================================ */
 (async () => {
-  const ownServer = !process.env.TEST_PORT;
+  const ownServer = !process.env.TEST_PORT && !process.env.SITE_URL;
   const server = ownServer ? await startServer() : null;
-  const url = "http://127.0.0.1:" + PORT + "/";
+  const url = SITE_URL;
+
+  console.log("Target: " + url);
 
   try {
     await run(url);
