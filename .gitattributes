@@ -1,0 +1,16 @@
+# Normalise line endings: store LF in the repository, check out CRLF on Windows.
+* text=auto
+
+*.js   text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.svg  text eol=lf
+*.yml  text eol=lf
+
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.pdf  binary
+*.wasm binary

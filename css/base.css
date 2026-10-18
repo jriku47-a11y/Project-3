@@ -1,0 +1,266 @@
+/* ============================================================
+   DEVFORGE — BASE
+   Design tokens, reset, typography, utilities.
+   Dark navy base with indigo/violet accents.
+   ============================================================ */
+
+/* ---------- 1. TOKENS ---------- */
+:root {
+  /* Brand */
+  --brand:            #6366f1;
+  --brand-strong:     #4f46e5;
+  --violet:           #a855f7;
+  --cyan:             #22d3ee;
+  --grad-brand:       linear-gradient(135deg, #6366f1 0%, #a855f7 55%, #22d3ee 130%);
+  --grad-soft:        linear-gradient(160deg, rgba(99,102,241,.22), rgba(168,85,247,.08));
+
+  /* Surfaces (dark default) */
+  --bg:               #070b18;
+  --bg-alt:           #0a1024;
+  --surface:          #101a33;
+  --surface-2:        #16213f;
+  --surface-3:        #1c2a4d;
+  --line:             rgba(148,163,213,.16);
+  --line-strong:      rgba(148,163,213,.30);
+
+  /* Text */
+  --text:             #eef2ff;
+  --text-2:           #c3cce6;
+  --muted:            #98a4c6;   /* 6.3:1 on --surface */
+  --accent:           #8b8cf9;
+  --accent-2:         #c084fc;
+
+  /* Status */
+  --ok:               #34d399;
+  --ok-soft:          rgba(52,211,153,.14);
+  --warn:             #fbbf24;
+  --danger:           #fb7185;
+  --danger-soft:      rgba(251,113,133,.14);
+
+  /* Shape */
+  --radius:           16px;
+  --radius-sm:        10px;
+  --radius-lg:        24px;
+  --shadow:           0 24px 60px -32px rgba(0,0,0,.85);
+  --shadow-sm:        0 10px 28px -18px rgba(0,0,0,.8);
+  --glow:             0 0 0 1px rgba(139,140,249,.35), 0 18px 50px -24px rgba(99,102,241,.65);
+
+  /* Type */
+  --font:   system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Layout */
+  --container: 1180px;
+  --header-h: 68px;
+  --section-gap: clamp(3.4rem, 7vw, 5.6rem);
+}
+
+[data-theme="light"] {
+  --bg:            #f6f7fc;
+  --bg-alt:        #ffffff;
+  --surface:       #ffffff;
+  --surface-2:     #f4f5fd;
+  --surface-3:     #eaeefb;
+  --line:          rgba(23,32,66,.10);
+  --line-strong:   rgba(23,32,66,.20);
+
+  --text:          #10162c;
+  --text-2:        #333d5e;
+  --muted:         #56618a;          /* 5.6:1 on --surface */
+  --accent:        #4f46e5;
+  --accent-2:      #7c3aed;
+
+  --brand:         #4f46e5;
+  --brand-strong:  #4338ca;
+
+  --shadow:        0 24px 60px -36px rgba(20,26,56,.35);
+  --shadow-sm:     0 10px 26px -18px rgba(20,26,56,.30);
+  --grad-soft:     linear-gradient(160deg, rgba(99,102,241,.10), rgba(168,85,247,.05));
+}
+
+/* ---------- 2. RESET ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-x: hidden;               /* the layout must never scroll sideways */
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 .6rem;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  font-weight: 600;
+  color: var(--text);
+}
+
+h1 { font-size: clamp(2.1rem, 5.2vw, 3.55rem); }
+h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); }
+h3 { font-size: 1.12rem; }
+h4 { font-size: .98rem; }
+
+p { margin: 0 0 1rem; }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 1.6rem 0;
+}
+
+code, .mono { font-family: var(--font-mono); font-size: .9em; }
+
+/* ---------- 3. ACCESSIBILITY ---------- */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Dark theme needs a slightly heavier ring to stay visible on navy. */
+[data-theme="dark"] :focus-visible { outline-color: #7dd3fc; }
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: .7rem 1.1rem;
+  background: var(--brand);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 1rem; text-decoration: none; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Visible only to assistive technology — used by the honeypot. */
+.hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---------- 4. UTILITIES ---------- */
+.container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+}
+
+.muted { color: var(--muted); }
+
+.grad {
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin: 0 0 .7rem;
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.kicker::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  max-width: 110px;
+  background: linear-gradient(90deg, var(--line-strong), transparent);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.eyebrow .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 0 4px rgba(34,211,238,.16);
+}
+
+.lede {
+  max-width: 60ch;
+  color: var(--text-2);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Scroll reveal — one short fade, never a long or looping animation. */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }

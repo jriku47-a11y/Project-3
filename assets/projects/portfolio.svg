@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Portfolio project preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="rgba(255,255,255,.30)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="#0a1024"/>
+  <rect width="640" height="360" fill="url(#bg)" opacity=".85"/>
+  <circle cx="140" cy="70" r="150" fill="url(#glow)"/>
+  <g opacity=".9">
+    <rect x="398" y="94" width="164" height="120" rx="14" fill="rgba(7,11,24,.5)" stroke="rgba(255,255,255,.28)"/>
+    <rect x="398" y="94" width="164" height="24" rx="14" fill="rgba(255,255,255,.16)"/>
+    <rect x="412" y="132" width="70" height="70" rx="8" fill="rgba(255,255,255,.35)"/>
+    <g fill="rgba(255,255,255,.22)">
+      <rect x="494" y="132" width="54" height="10" rx="5"/>
+      <rect x="494" y="150" width="54" height="10" rx="5"/>
+      <rect x="494" y="168" width="34" height="10" rx="5"/>
+    </g></g>
+  <g transform="translate(56 196)">
+    <rect width="46" height="46" rx="12" fill="rgba(7,11,24,.55)" stroke="rgba(255,255,255,.35)"/>
+    <text x="23" y="31" font-family="ui-monospace,Consolas,monospace" font-size="17" font-weight="700"
+          fill="#ffffff" text-anchor="middle">PO</text>
+    <text x="0" y="92" font-family="system-ui,Segoe UI,sans-serif" font-size="30" font-weight="700"
+          fill="#ffffff">Portfolio</text>
+    <text x="0" y="122" font-family="ui-monospace,Consolas,monospace" font-size="14" letter-spacing="2"
+          fill="rgba(255,255,255,.75)">DEVFORGE PROJECT</text>
+  </g>
+</svg>

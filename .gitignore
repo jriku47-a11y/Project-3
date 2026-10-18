@@ -1,0 +1,55 @@
+# ---- dependencies -------------------------------------------------
+node_modules/
+jspm_packages/
+vendor/bundle/
+
+# ---- secrets and local configuration ------------------------------
+# Never commit real credentials. Only .env.example belongs in the repo.
+.env
+.env.*
+!.env.example
+*.local
+config.local.*
+secrets.json
+*.pem
+*.key
+
+# ---- build output and caches --------------------------------------
+dist/
+build/
+.cache/
+.parcel-cache/
+*.tsbuildinfo
+
+# ---- logs ---------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+
+# ---- test output --------------------------------------------------
+coverage/
+.nyc_output/
+test-results/
+screenshots/
+
+# ---- editor and OS noise -----------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- temporary files ---------------------------------------------
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+*.rej

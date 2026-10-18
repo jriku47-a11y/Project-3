@@ -1,0 +1,19 @@
+{
+  "name": "devforge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DevForge — Web Development Portfolio and Project Showcase (IT Web Development Specialization Project)",
+  "author": "Jericho Andren",
+  "license": "MIT",
+  "scripts": {
+    "start": "node tools/serve.js",
+    "test": "node tests/run-tests.js",
+    "assets": "node tools/make-assets.js"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

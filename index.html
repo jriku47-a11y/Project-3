@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DevForge — Web Development Portfolio and Project Showcase</title>
+<meta name="description" content="DevForge is the web development specialization project of Jericho Andren, an IT student building modern, responsive and user-friendly web experiences with HTML, CSS, JavaScript, PHP and MySQL." />
+<meta name="author" content="Jericho Andren" />
+<meta name="theme-color" content="#070b18" />
+<meta name="color-scheme" content="dark light" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DevForge" />
+<meta property="og:title" content="DevForge — Web Development Portfolio and Project Showcase" />
+<meta property="og:description" content="A working portfolio: filterable projects, an accessible contact form, and a task manager that stores real data." />
+<meta property="og:image" content="assets/profile.jpg" />
+<meta property="og:locale" content="en_PH" />
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preload" as="image" href="assets/profile.jpg" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="DevForge — home">
+      <span class="brand-mark" aria-hidden="true">DF</span>
+      <span class="brand-text">
+        <span class="brand-name">DevForge</span>
+        <span class="brand-sub">Web Development</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-list" id="navList">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#specialization">Project Details</a></li>
+        <li><a href="#tasks">Task Manager</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to light theme">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></svg>
+      </button>
+      <a class="btn btn-ghost btn-sm" id="headerGithub" href="https://github.com/jriku47-a11y" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <ul class="mobile-list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#specialization">Project Details</a></li>
+      <li><a href="#tasks">Task Manager</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ==========================================================
+       01 — HOME
+       ========================================================== -->
+  <section class="section hero" id="home" aria-labelledby="heroTitle">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Web Development Specialization Project</p>
+        <h1 id="heroTitle">Building Modern, Responsive, and User-Friendly <span class="grad">Web Experiences.</span></h1>
+        <p class="hero-role" id="heroRole">IT Student / Aspiring Web Developer</p>
+        <p class="lede" id="heroLede">
+          I am an IT student specialising in web development. This project is my working portfolio:
+          every section is live, every filter works, and the task manager stores real data in your
+          browser instead of pretending to.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Explore My Projects</a>
+          <a class="btn btn-ghost" href="#contact">Contact Me</a>
+        </div>
+        <ul class="chip-row" id="heroSkills" aria-label="Featured technical skills"></ul>
+        <dl class="hero-meta" id="heroMeta"></dl>
+      </div>
+
+      <div class="hero-panel">
+        <div class="avatar" id="heroAvatar">
+          <span class="avatar-initials" aria-hidden="true">JA</span>
+        </div>
+        <div class="avatar-caption">
+          <strong id="heroName">Jericho Andren</strong>
+          <span id="heroLocation">Pasay City, Philippines</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — ABOUT
+       ========================================================== -->
+  <section class="section" id="about" aria-labelledby="aboutTitle">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">01 — About Me</p>
+        <h2 class="section-title" id="aboutTitle">About Me</h2>
+        <p class="section-lede" id="aboutLede"></p>
+      </header>
+
+      <div class="about-grid">
+        <div class="card reveal" id="aboutStory">
+          <div id="aboutParagraphs"></div>
+        </div>
+
+        <div class="card reveal" id="aboutGoal">
+          <h3 class="card-title" id="goalTitle">Career goal</h3>
+          <p class="muted" id="goalText"></p>
+          <h3 class="card-title" id="interestsTitle">Technical interests</h3>
+          <ul class="list-check" id="interestsList"></ul>
+        </div>
+
+        <div class="card reveal" id="aboutEducation">
+          <h3 class="card-title">Educational background</h3>
+          <ol class="timeline" id="educationTimeline"></ol>
+        </div>
+
+        <div class="card reveal" id="aboutLessons">
+          <h3 class="card-title">Lessons learned</h3>
+          <ul class="lesson-list" id="lessonsList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — TECHNICAL SKILLS
+       ========================================================== -->
+  <section class="section" id="skills" aria-labelledby="skillsTitle">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">02 — Technical Skills</p>
+        <h2 class="section-title" id="skillsTitle">What I can build with today</h2>
+        <p class="section-lede" id="skillsIntro"></p>
+        <p class="legend">
+          <span class="badge badge-current">Current</span> I can build with this today
+          <span class="badge badge-learning">Learning</span> actively studying, not production-ready
+        </p>
+      </header>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — PROJECTS
+       ========================================================== -->
+  <section class="section" id="projects" aria-labelledby="projectsTitle">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">03 — Projects Showcase</p>
+        <h2 class="section-title" id="projectsTitle">Projects</h2>
+        <p class="section-lede" id="projectsIntro"></p>
+      </header>
+
+      <div class="filter-bar" role="group" aria-label="Filter projects by discipline" id="projectFilters"></div>
+
+      <p class="result-count" id="projectCount" role="status" aria-live="polite"></p>
+
+      <div class="project-grid" id="projectGrid"></div>
+
+      <div class="empty-state" id="projectEmpty" hidden>
+        <h3 class="card-title">No projects in this category</h3>
+        <p class="muted">Try another filter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — SPECIALIZATION PROJECT DETAILS
+       ========================================================== -->
+  <section class="section" id="specialization" aria-labelledby="specTitle">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">04 — Project Details</p>
+        <h2 class="section-title" id="specTitle">Specialization Project Details</h2>
+        <p class="section-lede" id="specIntro"></p>
+      </header>
+
+      <div class="spec-grid">
+        <article class="card reveal" id="specBackground">
+          <h3 class="card-title">Project background and motivation</h3>
+          <p class="muted" id="specBackgroundText"></p>
+        </article>
+
+        <article class="card reveal" id="specProblem">
+          <h3 class="card-title">Problem statement</h3>
+          <p class="muted" id="specProblemText"></p>
+        </article>
+
+        <article class="card reveal" id="specObjectives">
+          <h3 class="card-title">Objectives</h3>
+          <h4 class="card-sub">General objectives</h4>
+          <ul class="list-check" id="objGeneral"></ul>
+          <h4 class="card-sub">Specific objectives</h4>
+          <ul class="list-check" id="objSpecific"></ul>
+        </article>
+
+        <article class="card reveal" id="specUsers">
+          <h3 class="card-title">Target users</h3>
+          <ul class="user-list" id="targetUsers"></ul>
+        </article>
+
+        <article class="card reveal" id="specFeatures">
+          <h3 class="card-title">System features</h3>
+          <ul class="list-check" id="featureList"></ul>
+        </article>
+
+        <article class="card reveal" id="specTech">
+          <h3 class="card-title">Technologies used</h3>
+          <ul class="tech-list" id="techList"></ul>
+        </article>
+
+        <article class="card reveal" id="specProcess">
+          <h3 class="card-title">Development process</h3>
+          <ol class="timeline" id="processTimeline"></ol>
+        </article>
+
+        <article class="card reveal" id="specChallenges">
+          <h3 class="card-title">Challenges and lessons learned</h3>
+          <div class="challenge-list" id="challengeList"></div>
+        </article>
+
+        <article class="card reveal" id="specFuture">
+          <h3 class="card-title">Future enhancements</h3>
+          <ul class="list-check" id="futureList"></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — TASK MANAGER
+       ========================================================== -->
+  <section class="section" id="tasks" aria-labelledby="tasksTitle">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">05 — Functional Task Manager</p>
+        <h2 class="section-title" id="tasksTitle">Task Manager</h2>
+        <p class="section-lede" id="tasksIntro"></p>
+      </header>
+
+      <div class="task-layout">
+        <!-- composer -->
+        <form class="card task-form" id="taskForm" novalidate aria-label="Add or edit a task">
+          <h3 class="card-title" id="taskFormTitle">New task</h3>
+
+          <div class="field">
+            <label for="taskTitle">Task title <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="taskTitle" name="title" maxlength="80" required
+                   aria-describedby="taskTitleHint taskTitleError" autocomplete="off" />
+            <p class="hint" id="taskTitleHint">Required. Up to 80 characters.</p>
+            <p class="field-error" id="taskTitleError" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="taskNotes">Notes (optional)</label>
+            <textarea id="taskNotes" name="notes" rows="3" maxlength="400" aria-describedby="taskNotesHint"></textarea>
+            <p class="hint" id="taskNotesHint">Up to 400 characters.</p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="taskPriority">Priority</label>
+              <select id="taskPriority" name="priority"></select>
+            </div>
+            <div class="field">
+              <label for="taskDue">Due date (optional)</label>
+              <input type="date" id="taskDue" name="due" aria-describedby="taskDueHint" />
+              <p class="hint" id="taskDueHint">Stored locally; never uploaded.</p>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" id="taskSubmit">Add task</button>
+            <button class="btn btn-ghost" type="button" id="taskCancel" hidden>Cancel edit</button>
+          </div>
+          <p class="form-status" id="taskFormStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <!-- list -->
+        <div class="task-panel card">
+          <div class="task-toolbar">
+            <div class="field field-search">
+              <label for="taskSearch" class="sr-only">Search tasks</label>
+              <input type="search" id="taskSearch" placeholder="Search tasks…" aria-describedby="taskSearchHint" autocomplete="off" />
+              <p class="hint" id="taskSearchHint">Type to filter by title or notes.</p>
+            </div>
+            <div class="filter-bar filter-bar-sm" role="group" aria-label="Filter tasks by status" id="taskFilters"></div>
+          </div>
+
+          <div class="progress-row">
+            <div class="progress" role="progressbar" aria-labelledby="taskProgressLabel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="taskProgress">
+              <span class="progress-bar" id="taskProgressBar"></span>
+            </div>
+            <p class="progress-text" id="taskProgressLabel">0 tasks</p>
+          </div>
+
+          <p class="result-count" id="taskCount" role="status" aria-live="polite"></p>
+
+          <ul class="task-list" id="taskList"></ul>
+
+          <div class="empty-state" id="taskEmpty" hidden>
+            <h3 class="card-title" id="taskEmptyTitle">No tasks yet</h3>
+            <p class="muted" id="taskEmptyBody"></p>
+          </div>
+
+          <div class="task-footer">
+            <button class="btn btn-ghost btn-sm" type="button" id="taskClear">Clear all</button>
+            <span class="storage-note">Saved in this browser with localStorage.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       07 — CONTACT
+       ========================================================== -->
+  <section class="section" id="contact" aria-labelledby="contactTitle">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">06 — Contact</p>
+        <h2 class="section-title" id="contactTitle">Contact</h2>
+        <p class="section-lede" id="contactIntro"></p>
+      </header>
+
+      <div class="contact-grid">
+        <div class="card contact-channels">
+          <h3 class="card-title">Reach me directly</h3>
+          <p class="muted" id="channelsNote"></p>
+          <ul class="channel-list" id="contactChannels"></ul>
+
+          <div class="notice" id="formNotice" hidden>
+            <p id="formNoticeText"></p>
+            <a id="noticeLinkedin" href="https://www.linkedin.com/in/jriku">Open LinkedIn</a>
+          </div>
+        </div>
+
+        <form class="card contact-form" id="contactForm" novalidate action="#" method="post" aria-label="Contact form">
+          <div class="field">
+            <label for="contactName">Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="contactName" name="name" maxlength="80" required autocomplete="name" aria-describedby="contactNameError" />
+            <p class="field-error" id="contactNameError" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="contactEmail">Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" maxlength="120" required autocomplete="email" aria-describedby="contactEmailHint contactEmailError" />
+            <p class="hint" id="contactEmailHint">Use an address you can receive mail at.</p>
+            <p class="field-error" id="contactEmailError" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" name="subject" maxlength="120" aria-describedby="contactSubjectError" />
+            <p class="field-error" id="contactSubjectError" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="contactMessage">Message <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="contactMessage" name="message" rows="5" maxlength="2000" required aria-describedby="contactMessageHint contactMessageError"></textarea>
+            <p class="hint" id="contactMessageHint">Required. At least 12 characters.</p>
+            <p class="field-error" id="contactMessageError" hidden></p>
+          </div>
+
+          <!-- honeypot: hidden from people and from assistive tech -->
+          <div class="hp" aria-hidden="true">
+            <label for="contactCompany">Leave this field empty</label>
+            <input type="text" id="contactCompany" name="company" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button class="btn btn-primary" type="submit" id="contactSubmit">Send message</button>
+          <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">DF</span>
+      <div>
+        <strong class="brand-name">DevForge</strong>
+        <p class="muted" id="footerBlurb"></p>
+      </div>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tasks">Task Manager</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-social">
+      <a class="btn btn-ghost btn-sm" id="footGithub" href="https://github.com/jriku47-a11y" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn btn-ghost btn-sm" id="footLinkedin" href="https://www.linkedin.com/in/jriku" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn btn-ghost btn-sm" id="footPortfolio" href="https://jriku47-a11y.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p class="muted">© <span id="year">2026</span> <span id="footName">Jericho Andren</span>. All rights reserved.</p>
+    <p class="muted" id="builtWith"></p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Project detail dialog -->
+<dialog class="dialog" id="projectDialog" aria-labelledby="dialogTitle">
+  <div class="dialog-inner">
+    <header class="dialog-head">
+      <h2 class="card-title" id="dialogTitle">Project</h2>
+      <button class="icon-btn" id="dialogClose" type="button" aria-label="Close project details">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="dialog-body" id="dialogBody"></div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/app.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
